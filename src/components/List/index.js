@@ -1,10 +1,15 @@
-export default function List({ typeOfWeather, newActivity, typeOfList }) {
-    if (typeOfWeather === typeOfList)
+export default function List({ typeOfList, activities}) {
+        console.log("here are the activities",activities);
         return (
-            <ul>
-                <li>go outside</li>
-                <li>read a book</li>
-                <li>hang out with Lucas</li>
-            </ul>
+            <div>
+                <h3>Activities for {typeOfList} Weather</h3>
+                <ul>
+                {activities?.map(activity =>{
+                    if (activity.typeOfWeather === typeOfList){
+                    return <li key={activity.id}>{activity.newActivity}</li>
+                    }
+                })}
+                </ul>
+            </div>
         );
 }

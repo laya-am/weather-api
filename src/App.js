@@ -2,30 +2,27 @@ import "./App.css";
 import Activity from "./components/List";
 import Form from "./components/Form";
 import Weather from "./components/Weather";
-import { useState } from "react";
 import { uid } from "uid";
+import useLocalStorageState from "use-local-storage-state";
 
 function App() {
-    const [activities, setActivities] = useState([]);
+    const [activities, setActivities] = useLocalStorageState("activities",{defaultValue:[]});
 
     function handleForm(event) {
         event.preventDefault();
         const formData = new FormData(event.target);
         const formObject = Object.fromEntries(formData);
         formObject.id = uid();
-        console.log(formObject);
         setActivities([...activities, formObject]);
-        console.log(activities);
         event.target.reset();
-
-        return formObject;
+        // return activities;
     }
 
     return (
         <div className="App">
             <Weather />
-            <Activity typeOfList="good" />
-            <Activity />
+            <Activity typeOfList="good" activities={activities} />
+            <Activity typeOfList="bad" activities={activities} />
             <Form onForm={handleForm} />
         </div>
     );
