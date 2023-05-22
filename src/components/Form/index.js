@@ -1,12 +1,15 @@
-
-
-export default function Form(){
+export default function Form({ onForm }) {
     return (
-        <form>
+        <form onSubmit={onForm}>
             <label htmlFor="newActivity">Add a new Activity:</label>
             <input type="text" name="newActivity" id="newActivity" />
             <div>
-                <input type="radio" id="good" value="good" name="typeOfWeather" />
+                <input
+                    type="radio"
+                    id="good"
+                    value="good"
+                    name="typeOfWeather"
+                />
                 <label htmlFor="good">Good Weather</label>
             </div>
             <div>
@@ -15,5 +18,5 @@ export default function Form(){
             </div>
             <button type="submit">Submit</button>
         </form>
-    )
+    );
 }
