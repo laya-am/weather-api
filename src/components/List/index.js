@@ -1,8 +1,8 @@
 import "./List.css";
 
-export default function List({ typeOfList, activities, onDelete }) {
+export default function List({ typeOfList, activities, onDelete, listClass }) {
     return (
-        <div className="list">
+        <div className={`list ${listClass}`}>
             <h4 className="list-title">Activities for {typeOfList} Weather:</h4>
             <ul >
                 {activities.map(

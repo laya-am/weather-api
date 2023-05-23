@@ -3,14 +3,14 @@ import "./Form.css"
 export default function Form({ onForm }) {
     return (
         <form onSubmit={onForm} className="form">
-            <label htmlFor="newActivity" className="input-label">Add a new Activity:</label>
+            <label htmlFor="newActivity" className="input-label"><strong>Add a new Activity:</strong></label>
             <input type="text" name="newActivity" id="newActivity" className="input" />
             <div className="radio">
                 <input
                     type="radio"
                     id="good"
                     value="good"
-                    name="typeOfWeather"
+                    name="typeOfWeather" 
                 />
                 <label htmlFor="good">Good Weather</label>
             </div>

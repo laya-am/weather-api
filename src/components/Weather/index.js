@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import "./Weather.css";
 
-export default function Weather(sth) {
+export default function Weather({setIsGoodWeather, isGoodWeather}) {
     const [weather, setWeather] = useState({});
 
     useEffect(() => {
@@ -19,10 +19,11 @@ export default function Weather(sth) {
                         isGoodWeather: data.isGoodWeather,
                     });
                     console.log("weather: ", weather);
+                    setIsGoodWeather(data.isGoodWeather)
                 } catch (error) {
                     console.error("There was an error: ", error);
                 }
-            }
+            } 
             fetchWeather();
         }, 5000);
         return () => clearTimeout(timer);
@@ -32,16 +33,16 @@ export default function Weather(sth) {
 
         <div className="weather-container">
             <div className="weather-update">
-                <p className="weather-temperature">{weather.temperature}</p>
+                <p className={`weather-temperature weather-${isGoodWeather}`}>{weather.temperature}</p>
                 <h1 className="weather-icon">{weather.condition}</h1>
             </div>
             {weather.isGoodWeather !== undefined &&
                 (weather.isGoodWeather ? (
-                    <h3 className="weather-message">
+                    <h3 className={`weather-message weather-${isGoodWeather}`}>
                         Awesome weather! Let's go out and:
                     </h3>
                 ) : (
-                    <h3 className="weather-message">
+                    <h3 className={`weather-message weather-${isGoodWeather}`}>
                         Bad weather outside. But we can:
                     </h3>
                 ))}

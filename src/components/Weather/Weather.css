@@ -3,33 +3,37 @@
     justify-content: space-around;
 }
 
-.weather-temperature {
-    display: flex;
-    color: rgba(255, 255, 255, 0.886);
-    padding-top: 1.5rem;
-    padding-left: 3rem;
-    font-size: 5rem;
-    /* font-family: "Roboto"; */
-}
-
 .weather-update {
     display: flex;
 }
 
+.weather-temperature {
+    display: flex;
+    color: blue;
+    margin: 0;
+    font-size: 5rem;
+    padding-top: 20px;
+}
+
+
 .weather-icon {
     display: flex;
-
     font-size: 7rem;
-    /* padding-top: -5rem; */
-    /* padding-top: 2rem; */
-    /* padding-left: 3rem; */
     flex-direction: column;
+    margin: 0;
 }
 
 .weather-message {
-    /* display: flex; */
-
     font-size: 1.6rem;
     color: rgb(232, 246, 171);
-    margin-top: -2rem;
+    margin: 0;
+    margin-top: 15px;
+}
+
+.weather-true{
+    color: #1342BA
+}
+
+.weather-false{
+    color: #2D2F34
 }

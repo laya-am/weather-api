@@ -4,8 +4,27 @@
 }
 
 .list{
-    background-color: red;
     border-radius: 10px;
+    box-shadow: 10px 10px 10px grey;
+    overflow:scroll;
+}
+
+.current-list{
+    background-color: #8DCBE6;
+  }
+  
+.second-list{
+    background-color: lightgray;
+    color: gray;
+  }
+
+.current-list .button-delete{
+    background-color: #8DCBE6;
+}
+
+.second-list .button-delete{
+    background-color: lightgray;
+    color: gray;
 }
 
 .list-item{
@@ -19,5 +38,6 @@
     border: 0;
     position: absolute;
     right:5px;
+    font-size: 1rem;
     /* border-radius: 10px; */
 }

@@ -1,12 +1,22 @@
+
+
 .App {
   text-align: center;
   margin:0;
-  padding: 20px;
+  padding: 0 30px;
   display: flex;
   height: 100vh;
   justify-content: space-evenly;
   flex-direction: column;
-  /* background-color: gray; */
+
+}
+
+.app-true{
+  background-color: #FFEA20;
+}
+
+.app-false{
+  background-color: #E3F6FF;
 }
 
 

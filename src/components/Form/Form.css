@@ -1,21 +1,18 @@
 .form{
     padding: 5%;
-    background-color: darkolivegreen;
-    border-radius: 30px;
+    background-color: #9DF1DF;
+    border-radius: 10px;
     box-shadow: 10px 10px 10px grey;
-}
-
-.input-label{
- 
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .input{
-    margin: 10px;
+    margin: 0 30px;
 }
 
 .radio{
-    margin: 5%;
-    display: inline;
 }
 
 .button-submit{
