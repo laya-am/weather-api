@@ -1,6 +1,8 @@
+import "./Form.css"
+
 export default function Form({ onForm }) {
     return (
-        <form onSubmit={onForm}>
+        <form onSubmit={onForm} className="form">
             <label htmlFor="newActivity">Add a new Activity:</label>
             <input type="text" name="newActivity" id="newActivity" />
             <div>
