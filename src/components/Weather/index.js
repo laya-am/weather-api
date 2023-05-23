@@ -29,6 +29,7 @@ export default function Weather(sth) {
     }, [weather]);
 
     return (
+
         <div className="weather-container">
             <div className="weather-update">
                 <p className="weather-temperature">{weather.temperature}</p>

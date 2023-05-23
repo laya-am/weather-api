@@ -3,9 +3,9 @@ import "./Form.css"
 export default function Form({ onForm }) {
     return (
         <form onSubmit={onForm} className="form">
-            <label htmlFor="newActivity">Add a new Activity:</label>
-            <input type="text" name="newActivity" id="newActivity" />
-            <div>
+            <label htmlFor="newActivity" className="input-label">Add a new Activity:</label>
+            <input type="text" name="newActivity" id="newActivity" className="input" />
+            <div className="radio">
                 <input
                     type="radio"
                     id="good"
@@ -14,11 +14,11 @@ export default function Form({ onForm }) {
                 />
                 <label htmlFor="good">Good Weather</label>
             </div>
-            <div>
+            <div className="radio">
                 <input type="radio" id="bad" value="bad" name="typeOfWeather" />
                 <label htmlFor="bad">Bad Weather</label>
             </div>
-            <button type="submit">Submit</button>
+            <button className="button-submit" type="submit">Submit</button>
         </form>
     );
 }
