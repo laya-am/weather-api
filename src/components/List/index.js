@@ -1,3 +1,4 @@
+
 export default function List({ typeOfList, activities, onDelete }) {
     return (
         <div>
