@@ -33,3 +33,11 @@
     color: rgb(232, 246, 171);
     margin-top: -2rem;
 }
+
+.weather-true{
+    color: #1342BA
+}
+
+.weather-false{
+    color: #2D2F34
+}

@@ -1,3 +1,5 @@
+
+
 .App {
   text-align: center;
   margin:0;
@@ -6,16 +8,15 @@
   height: 100vh;
   justify-content: space-evenly;
   flex-direction: column;
-  /* background-color: gray; */
 }
 
-/* .list.current-list{
-  background-color: green;
+.app-true{
+  background-color: #FFEA20;
 }
 
-.list .second-list{
-  background-color: red;
-} */
+.app-false{
+  background-color: #E3F6FF;
+}
 
 
 @media (prefers-reduced-motion: no-preference) {

@@ -42,8 +42,8 @@ function App() {
     };
 
     return (
-        <div className="App">
-            <Weather setIsGoodWeather={setIsGoodWeather} />
+        <div className={`App app-${isGoodWeather}`}>
+            <Weather setIsGoodWeather={setIsGoodWeather} isGoodWeather={isGoodWeather}/>
             <List listClass="current-list"
                 typeOfList= {isGoodWeather ? "good" : "bad"}
                 activities={activities}
