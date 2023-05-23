@@ -5,8 +5,7 @@ export default function Weather(sth) {
     const [weather, setWeather] = useState({});
 
     useEffect(() => {
-        const timer= setTimeout(() => {
-
+        const timer = setTimeout(() => {
             async function fetchWeather() {
                 try {
                     const response = await fetch(
@@ -21,23 +20,31 @@ export default function Weather(sth) {
                     });
                     console.log("weather: ", weather);
                 } catch (error) {
-                    console.error("There was an error: ",error);
+                    console.error("There was an error: ", error);
                 }
-
             }
             fetchWeather();
-        }, 5000)
+        }, 5000);
         return () => clearTimeout(timer);
     }, [weather]);
 
     return (
-        <>
-            <div className="weather">
-            <p className="weather-temperature">{weather.temperature}</p>
-            <p className="weather-icon">{weather.condition}</p>
+
+        <div className="weather-container">
+            <div className="weather-update">
+                <p className="weather-temperature">{weather.temperature}</p>
+                <h1 className="weather-icon">{weather.condition}</h1>
             </div>
             {weather.isGoodWeather !== undefined &&
-            (weather.isGoodWeather ? <h3 className="weather-message">Awesome weather! Let's go out and:</h3> : <h3 className="weather-message">Bad weather outside. But we can:</h3>)}
-        </>
+                (weather.isGoodWeather ? (
+                    <h3 className="weather-message">
+                        Awesome weather! Let's go out and:
+                    </h3>
+                ) : (
+                    <h3 className="weather-message">
+                        Bad weather outside. But we can:
+                    </h3>
+                ))}
+        </div>
     );
 }
