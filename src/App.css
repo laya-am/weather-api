@@ -9,6 +9,14 @@
   /* background-color: gray; */
 }
 
+/* .list.current-list{
+  background-color: green;
+}
+
+.list .second-list{
+  background-color: red;
+} */
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

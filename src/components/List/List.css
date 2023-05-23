@@ -4,9 +4,16 @@
 }
 
 .list{
-    background-color: red;
     border-radius: 10px;
 }
+
+.current-list{
+    background-color: green;
+  }
+  
+.second-list{
+    background-color: red;
+  }
 
 .list-item{
     text-align: left;

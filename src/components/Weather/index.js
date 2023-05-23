@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import "./Weather.css";
 
-export default function Weather(sth) {
+export default function Weather({setIsGoodWeather}) {
     const [weather, setWeather] = useState({});
 
     useEffect(() => {
@@ -19,10 +19,11 @@ export default function Weather(sth) {
                         isGoodWeather: data.isGoodWeather,
                     });
                     console.log("weather: ", weather);
+                    setIsGoodWeather(data.isGoodWeather)
                 } catch (error) {
                     console.error("There was an error: ", error);
                 }
-            }
+            } 
             fetchWeather();
         }, 5000);
         return () => clearTimeout(timer);
