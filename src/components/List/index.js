@@ -1,4 +1,5 @@
 export default function List({ typeOfList, activities }) {
+    console.log(activities);
     return (
         <div>
             <h3>Activities for {typeOfList} Weather</h3>

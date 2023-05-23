@@ -25,7 +25,7 @@ export default function Weather() {
             }
             fetchWeather();
             console.log("new data was fetched in timeout");
-        }, 5000)
+        }, 50000)
         return () => clearTimeout(timer);
     }, [weather]);
 
@@ -33,8 +33,9 @@ export default function Weather() {
         <>
             <p>{weather.temperature}</p>
             <p>{weather.condition}</p>
-            {weather.isGoodWeather !== undefined && (weather.isGoodWeather ? <h3>Awesome weather! Let's go out and:</h3> : <h3>Bad weather outside. But we can:</h3>)}
-            {/* {weather.isGoodWeather ? <h3>Awesome weather! Let's go out and:</h3> : <h3>Bad weather outside. But we can:</h3>} */}
+            {weather.isGoodWeather !== undefined &&
+            (weather.isGoodWeather ? <h3>Awesome weather! Let's go out and:</h3> : <h3>Bad weather outside. But we can:</h3>)}
+            
         </>
     );
 }
