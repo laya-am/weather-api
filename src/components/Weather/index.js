@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import "./Weather.css";
 
-export default function Weather({setIsGoodWeather, isGoodWeather}) {
+export default function Weather({setIsGoodWeather, isGoodWeather, location}) {
     const [weather, setWeather] = useState({});
 
     useEffect(() => {
@@ -9,10 +9,10 @@ export default function Weather({setIsGoodWeather, isGoodWeather}) {
             async function fetchWeather() {
                 try {
                     const response = await fetch(
-                        `https://example-apis.vercel.app/api/weather`
+                        `https://example-apis.vercel.app/api/weather/${location}`
                     );
                     const data = await response.json();
-                    // console.log(data);
+                    console.log(data);
                     setWeather({
                         condition: data.condition,
                         temperature: data.temperature,
@@ -39,11 +39,11 @@ export default function Weather({setIsGoodWeather, isGoodWeather}) {
             {weather.isGoodWeather !== undefined &&
                 (weather.isGoodWeather ? (
                     <h3 className={`weather-message weather-${isGoodWeather}`}>
-                        Awesome weather! Let's go out and:
+                        Awesome weather!
                     </h3>
                 ) : (
                     <h3 className={`weather-message weather-${isGoodWeather}`}>
-                        Bad weather outside. But we can:
+                        Bad weather outside
                     </h3>
                 ))}
         </div>

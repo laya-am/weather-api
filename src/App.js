@@ -2,6 +2,7 @@ import "./App.css";
 import List from "./components/List";
 import Form from "./components/Form";
 import Weather from "./components/Weather";
+import Location from "./components/Location";
 import { uid } from "uid";
 import useLocalStorageState from "use-local-storage-state";
 import { useState } from "react";
@@ -23,7 +24,8 @@ function App() {
         },
     ]});
 
-    const [isGoodWeather, setIsGoodWeather] = useState(true)
+    const [isGoodWeather, setIsGoodWeather] = useState(true);
+    const [location, setLocation] = useState("europe");
 
     function handleForm(event) {
         event.preventDefault();
@@ -43,7 +45,8 @@ function App() {
 
     return (
         <div className={`App app-${isGoodWeather}`}>
-            <Weather setIsGoodWeather={setIsGoodWeather} isGoodWeather={isGoodWeather}/>
+            <Weather location={location} setIsGoodWeather={setIsGoodWeather} isGoodWeather={isGoodWeather}/>
+            <Location location={location} setLocation={setLocation} />
             <List listClass="current-list"
                 typeOfList= {isGoodWeather ? "good" : "bad"}
                 activities={activities}
