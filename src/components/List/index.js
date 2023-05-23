@@ -1,9 +1,8 @@
+import "./List.css";
 
 export default function List({ typeOfList, activities, onDelete }) {
     return (
-        <div>
-            <h3>Activities for {typeOfList} Weather</h3>
-            <ul>
+            <ul className="list">
                 {activities.map(
                     (activity) =>
                         activity.typeOfWeather === typeOfList && (
@@ -16,6 +15,5 @@ export default function List({ typeOfList, activities, onDelete }) {
                         )
                 )}
             </ul>
-        </div>
     );
 }

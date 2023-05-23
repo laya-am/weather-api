@@ -4,6 +4,7 @@ import Form from "./components/Form";
 import Weather from "./components/Weather";
 import { uid } from "uid";
 import useLocalStorageState from "use-local-storage-state";
+// import { useState } from "react";
 
 function App() {
     const [activities, setActivities] = useLocalStorageState("activities",{defaultValue:[
@@ -19,9 +20,9 @@ function App() {
         typeOfWeather: "good",
         id: 10002
         },
-
     ]});
 
+    // const [isGoodWeather, setIsGoodWeather] = useState("good")
 
     function handleForm(event) {
         event.preventDefault();
@@ -30,28 +31,27 @@ function App() {
         formObject.id = uid(5);
         setActivities([...activities, formObject]);
         event.target.reset();
-        // return activities;
     }
 
     const handleDeleteActivities = (id) => {
         console.log("deleting activity by id", id);
 
-        console.log("activities: ", activities);
         setActivities(activities.filter((activity) => activity.id !== id));
-        console.log("activities 2: ", activities);
+        console.log("activities: ", activities);
     };
 
     return (
         <div className="App">
-            <Weather />
-
+            <Weather  />
             <List
-                typeOfList="good"
+                typeOfList= "good"
+                // {isGoodWeather ==="good" ? "good" : "bad"}
                 activities={activities}
                 onDelete={handleDeleteActivities}
             />
             <List
-                typeOfList="bad"
+                typeOfList= "bad"
+                // {isGoodWeather ==="good" ? "bad" : "good"}
                 activities={activities}
                 onDelete={handleDeleteActivities}
             />
