@@ -3,13 +3,12 @@ export default function List({ typeOfList, activities }) {
         <div>
             <h3>Activities for {typeOfList} Weather</h3>
             <ul>
-                {activities?.map((activity) => {
-                    if (activity.typeOfWeather === typeOfList) {
-                        return (
+                {activities.map(
+                    (activity) =>
+                        activity.typeOfWeather === typeOfList && (
                             <li key={activity.id}>{activity.newActivity}</li>
-                        );
-                    }
-                })}
+                        )
+                )}
             </ul>
         </div>
     );
