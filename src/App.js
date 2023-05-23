@@ -6,7 +6,9 @@ import { uid } from "uid";
 import useLocalStorageState from "use-local-storage-state";
 
 function App() {
-    const [activities, setActivities] = useLocalStorageState("activities",{defaultValue:[]});
+    const [activities, setActivities] = useLocalStorageState("activities", {
+        defaultValue: [],
+    });
 
     function handleForm(event) {
         event.preventDefault();
@@ -18,11 +20,27 @@ function App() {
         // return activities;
     }
 
+    const handleDeleteActivities = (id) => {
+        console.log("deleting activity by id", id);
+
+        console.log("activities: ", activities);
+        setActivities(activities.filter((activity) => activity.id !== id));
+        console.log("activities 2: ", activities);
+    };
+
     return (
         <div className="App">
             <Weather />
-            <Activity typeOfList="good" activities={activities} />
-            <Activity typeOfList="bad" activities={activities} />
+            <Activity
+                typeOfList="good"
+                activities={activities}
+                onDelete={handleDeleteActivities}
+            />
+            <Activity
+                typeOfList="bad"
+                activities={activities}
+                onDelete={handleDeleteActivities}
+            />
             <Form onForm={handleForm} />
         </div>
     );
