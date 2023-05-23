@@ -32,8 +32,10 @@ export default function Weather(sth) {
 
     return (
         <>
+            <div className="weather">
             <p className="weather-temperature">{weather.temperature}</p>
             <p className="weather-icon">{weather.condition}</p>
+            </div>
             {weather.isGoodWeather !== undefined &&
             (weather.isGoodWeather ? <h3 className="weather-message">Awesome weather! Let's go out and:</h3> : <h3 className="weather-message">Bad weather outside. But we can:</h3>)}
         </>

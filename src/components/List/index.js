@@ -2,18 +2,21 @@ import "./List.css";
 
 export default function List({ typeOfList, activities, onDelete }) {
     return (
-            <ul className="list">
+        <div className="list">
+            <h4 className="list-title">Activities for {typeOfList} Weather:</h4>
+            <ul >
                 {activities.map(
                     (activity) =>
                         activity.typeOfWeather === typeOfList && (
-                            <li key={activity.id}>
+                            <li className="list-item" key={activity.id}>
                                 {activity.newActivity}{" "}
-                                <button onClick={() => onDelete(activity.id)}>
+                                <button className="button-delete" onClick={() => onDelete(activity.id)}>
                                     X
                                 </button>
                             </li>
                         )
                 )}
             </ul>
+        </div>
     );
 }

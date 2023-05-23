@@ -1,3 +1,23 @@
+.list-title{
+    text-align: left;
+    margin-left: 20px;
+}
+
 .list{
     background-color: red;
+    border-radius: 10px;
+}
+
+.list-item{
+    text-align: left;
+    padding: 5px;
+    position: relative;
+
+}
+
+.button-delete{
+    border: 0;
+    position: absolute;
+    right:5px;
+    /* border-radius: 10px; */
 }
