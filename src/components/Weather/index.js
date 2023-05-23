@@ -10,12 +10,12 @@ export default function Weather() {
                     `https://example-apis.vercel.app/api/weather`
                 );
                 const data = await response.json();
-                console.log(data);
+                // console.log(data);
                 setWeather({
                     condition: data.condition,
                     temperature: data.temperature,
                 });
-                console.log("weather: ", weather);
+                // console.log("weather: ", weather);
             } catch (error) {
                 console.error(error);
             }
