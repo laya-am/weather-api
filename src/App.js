@@ -22,6 +22,7 @@ function App() {
 
     ]});
 
+
     function handleForm(event) {
         event.preventDefault();
         const formData = new FormData(event.target);
@@ -32,11 +33,28 @@ function App() {
         // return activities;
     }
 
+    const handleDeleteActivities = (id) => {
+        console.log("deleting activity by id", id);
+
+        console.log("activities: ", activities);
+        setActivities(activities.filter((activity) => activity.id !== id));
+        console.log("activities 2: ", activities);
+    };
+
     return (
         <div className="App">
             <Weather />
-            <List typeOfList="good" activities={activities} />
-            <List typeOfList="bad" activities={activities} />
+
+            <List
+                typeOfList="good"
+                activities={activities}
+                onDelete={handleDeleteActivities}
+            />
+            <List
+                typeOfList="bad"
+                activities={activities}
+                onDelete={handleDeleteActivities}
+            />
             <Form onForm={handleForm} />
         </div>
     );

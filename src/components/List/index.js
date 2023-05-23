@@ -1,5 +1,5 @@
-export default function List({ typeOfList, activities }) {
-    console.log(activities);
+
+export default function List({ typeOfList, activities, onDelete }) {
     return (
         <div>
             <h3>Activities for {typeOfList} Weather</h3>
@@ -7,7 +7,12 @@ export default function List({ typeOfList, activities }) {
                 {activities.map(
                     (activity) =>
                         activity.typeOfWeather === typeOfList && (
-                            <li key={activity.id}>{activity.newActivity}</li>
+                            <li key={activity.id}>
+                                {activity.newActivity}{" "}
+                                <button onClick={() => onDelete(activity.id)}>
+                                    X
+                                </button>
+                            </li>
                         )
                 )}
             </ul>

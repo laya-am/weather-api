@@ -22,6 +22,7 @@ export default function Weather() {
                 } catch (error) {
                     console.error("There was an error: ",error);
                 }
+
             }
             fetchWeather();
             console.log("new data was fetched in timeout");
